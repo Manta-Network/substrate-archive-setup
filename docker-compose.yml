@@ -18,7 +18,7 @@ services:
     image: subsquid/substrate-ingest:firesquid
     command: [
        # polkadot endpoints -- replace with your wss
-       "-e", "wss://c1.baikal.testnet.manta.systems",
+       "-e", "wss://c1.manta.seabird.systems",
        "-c", "10", # allow up to 20 pending requests for the above endpoint (default is 5)
        # for a local setup use 'host.docker.internal' as a host (instead of localhost or 127.0.0.1
        # e.g. "-e", "ws://host.docker.internal:9944",
