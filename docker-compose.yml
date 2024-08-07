@@ -3,7 +3,7 @@ services:
     image: postgres:12  # CockroachDB cluster might be a better fit for production deployment
     restart: always
     volumes:
-      - /var/lib/postgresql/data
+      - ./.docker/postgresql:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
