@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: squid-archive
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
 
   ingest:
     depends_on:
@@ -32,7 +32,7 @@ services:
        "--out", "postgres://postgres:postgres@db:5432/squid-archive"
     ]
     ports:
-      - "9090:9090" # prometheus port
+      - "127.0.0.1:9090:9090" # prometheus port
 
   gateway:
     depends_on:
@@ -47,7 +47,7 @@ services:
                          # (e.g. Moonbeam/Moonriver or Astar/Shiden)
     ]
     ports:
-      - "8888:8000"
+      - "127.0.0.1:8888:8000"
 
   # Explorer service is optional.
   # It provides rich GraphQL API for querying archived data.
@@ -62,4 +62,4 @@ services:
       DB_USER: "postgres"
       DB_PASS: "postgres"
     ports:
-      - "4444:3000"
+      - "127.0.0.1:4444:3000"
